@@ -1,0 +1,98 @@
+Testing the module:
+
+Send OTP to a Valid Email:
+
+Test if generate_OTP_email() works for an email ending in @dso.org.sg.
+Expected: It should print a message saying the OTP was sent successfully.
+
+Testcase 1: Entering correct email address with correct domain. Domain should end with @dso.org.sg and correct OTP
+
+Enter your email: pavi@dso.org.sg
+Sending email to pavi@dso.org.sg:
+Your OTP Code is 536677. The code is valid for 1 minute.
+Email Status: email containing OTP has been sent successfully.
+Enter OTP: 536677
+OTP Status: OTP is valid and checked
+----------
+
+Reject Invalid Email:
+
+Test if the system rejects emails that do not end with @dso.org.sg.
+Expected: It should say the email is invalid.
+
+Testcase 2: Entering wrong email address with different domain
+
+Enter your email: pavi@gmail.com
+Email Status: email address is invalid.
+----------
+
+OTP Timeout Test:
+
+Wait for more than 1 minute before entering an OTP and check the response.
+Expected: The program should say the OTP timed out.
+
+Testcase 3: Entering correct email address and without entering OTP wait for 1 minute. After 1 minute, if we try to check OTP, it will say  timed out
+
+Enter your email: pavi@dso.org.sg
+Sending email to pavi@dso.org.sg:
+Your OTP Code is 845740. The code is valid for 1 minute.
+Email Status: email containing OTP has been sent successfully.
+Enter OTP: 
+OTP Status: timeout after 1 min
+
+
+Testcase 4: Entering correct email address and entering OTP for some attempts, wait for 1 minute. After 1 minute OTP will be timed out
+
+Enter your email: pavi@dso.org.sg
+Sending email to pavi@dso.org.sg:
+Your OTP Code is 677250. The code is valid for 1 minute.
+Email Status: email containing OTP has been sent successfully.
+Enter OTP: 458213
+Enter OTP: 452863
+Enter OTP: 235864
+Enter OTP: 785236
+Enter OTP: 
+OTP Status: timeout after 1 min
+-----------
+
+Correct OTP Entry:
+
+Enter the correct OTP within 1 minute and check if it’s accepted.
+Expected: The program should confirm the OTP is valid and checked.
+
+Testcase 5: Entering correct email address with correct domain. Domain should end with @dso.org.sg and correct OTP
+
+Enter your email: pavi@dso.org.sg
+Sending email to pavi@dso.org.sg:
+Your OTP Code is 536677. The code is valid for 1 minute.
+Email Status: email containing OTP has been sent successfully.
+Enter OTP: 536677
+OTP Status: OTP is valid and checked
+----------
+
+Incorrect OTP Attempts:
+
+Enter incorrect OTPs up to 10 times.
+Expected: The program should eventually say the OTP is wrong after 10 tries.
+
+
+Testcase 6: Entering correct email address and wrong/empty OTP, press enter and after 10 tries, it shows error
+
+Enter your email: pavi@dso.org.sg
+Sending email to pavi@dso.org.sg:
+Your OTP Code is 586202. The code is valid for 1 minute.
+Email Status: email containing OTP has been sent successfully.
+Enter OTP: 458215 
+Enter OTP: 846232 
+Enter OTP: 563452
+Enter OTP: 784965
+Enter OTP: 458214 
+Enter OTP: 235656
+Enter OTP: 784524
+Enter OTP: 784562
+Enter OTP: 785412
+Enter OTP: 786565
+OTP Status: OTP is wrong after 10 tries
+
+
+
