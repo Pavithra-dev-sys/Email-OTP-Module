@@ -1,0 +1,20 @@
+Assumptions:
+
+1. Valid Emails: The program only accepts email addresses that ends with @dso.org.sg. This makes sure that only users from the right organization can use it.
+
+2. Random OTP: The OTP is generated as a 6-digit random number. 
+
+3. Basic Error Handling: There is simple error handling for when emails fail to send. More detailed checks could be added in a real system.
+
+4. Email Sending Simulation: The SendEmail() function just prints a message to the console to simulate sending an email. In a real system, this should be replaced with actual email-sending code.
+
+5. Reading User Input: The IOSTREAM class reads OTP input from the console.
+
+6. OTP Expiry: The OTP is valid for only 1 minute. After that, it expires, and users cannot use it.
+
+7. Maximum Attempts: Users can try to enter the correct OTP up to 10 times before the system stops them.
+
+
+
+
+
